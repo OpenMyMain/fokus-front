@@ -1,6 +1,6 @@
 <template>
     <!-- HEADER -->
-    <header class="fixed top-0 left-0 right-0 bg-black shadow-md z-50">
+    <header v-if="!isSocialAccountsPage" class="fixed top-0 left-0 right-0 bg-black shadow-md z-50">
       <div class="flex items-center justify-between px-4 py-3 h-16">
         <!-- Back button -->
         <router-link :to="{name:'login'}" class=" block top-0 left-0 my-2 w-fit">
@@ -46,12 +46,12 @@
       </nav>
     </aside>
 
-  <router-view class="mt-16 pt-2 pb-20 px-4" style="min-height: calc(100svh - 64px - 64px)" v-if="user"/>
-  <app-navbar @click="isOpen = false" />
+  <router-view v-if="user" :class="isSocialAccountsPage ? '' : 'mt-16 pt-2 pb-20 px-4'" :style="isSocialAccountsPage ? '' : 'min-height: calc(100svh - 64px - 64px)'"/>
+  <app-navbar v-if="!isSocialAccountsPage" @click="isOpen = false" />
 </template>
 
 <script setup>
-import {useRouter} from "vue-router";
+import {useRouter, useRoute} from "vue-router";
 import {ref, computed, watchEffect} from "vue";
 import {useAuthStore} from "@/stores/auth.js";
 import AppNavbar from "@/components/Common/AppNavbar.vue";
@@ -59,11 +59,13 @@ import LogoutLink from "@/components/Authentification/LogoutLink.vue";
 import IconBack from "@/components/icons/IconBack.vue";
 
 const router = useRouter();
+const route = useRoute();
 
 const authStore = useAuthStore();
 
 const user = computed(() => authStore.user);
 const fetched = computed(() => authStore.isFetched);
+const isSocialAccountsPage = computed(() => route.name === 'social_accounts');
 
 watchEffect(() => {
   if (fetched.value && user.value) return;
