@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* Custom spacing classes */
+@layer components {
+  /* Spacing utilities */
+  .px-margin-mobile { @apply px-5; }
+  .px-margin-desktop { @apply px-10; }
+  .py-margin-mobile { @apply py-5; }
+  .py-margin-desktop { @apply py-10; }
+
+  .space-y-xl { @apply space-y-8; }
+  .space-y-lg { @apply space-y-6; }
+  .space-y-md { @apply space-y-4; }
+  .space-y-sm { @apply space-y-2; }
+  .space-y-xs { @apply space-y-1; }
+
+  .gap-xl { @apply gap-8; }
+  .gap-lg { @apply gap-6; }
+  .gap-md { @apply gap-4; }
+  .gap-sm { @apply gap-2; }
+  .gap-xs { @apply gap-1; }
+
+  .mt-lg { @apply mt-6; }
+  .mt-md { @apply mt-4; }
+  .mt-sm { @apply mt-2; }
+
+  .mb-lg { @apply mb-6; }
+  .mb-md { @apply mb-4; }
+  .mb-sm { @apply mb-2; }
+
+  .pt-lg { @apply pt-6; }
+  .pb-lg { @apply pb-6; }
+
+  /* Typography classes */
+  .font-display-lg { @apply font-bold; font-family: 'Inter', sans-serif; font-size: 32px; line-height: 40px; letter-spacing: -0.02em; font-weight: 700; }
+  .text-display-lg { font-size: 32px; line-height: 40px; letter-spacing: -0.02em; }
+
+  .font-headline-md { font-family: 'Inter', sans-serif; font-size: 24px; line-height: 32px; letter-spacing: -0.01em; font-weight: 600; }
+  .text-headline-md { font-size: 24px; line-height: 32px; letter-spacing: -0.01em; }
+
+  .font-headline-sm { font-family: 'Inter', sans-serif; font-size: 20px; line-height: 28px; font-weight: 600; }
+  .text-headline-sm { font-size: 20px; line-height: 28px; }
+
+  .font-body-lg { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 24px; font-weight: 400; }
+  .text-body-lg { font-size: 16px; line-height: 24px; }
+
+  .font-body-md { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 20px; font-weight: 400; }
+  .text-body-md { font-size: 14px; line-height: 20px; }
+
+  .font-body-sm { font-family: 'Inter', sans-serif; font-size: 13px; line-height: 18px; font-weight: 400; }
+  .text-body-sm { font-size: 13px; line-height: 18px; }
+
+  .font-label-md { font-family: 'Inter', sans-serif; font-size: 12px; line-height: 16px; letter-spacing: 0.05em; font-weight: 600; }
+  .text-label-md { font-size: 12px; line-height: 16px; letter-spacing: 0.05em; }
+
+  /* Glass card effect */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  }
+
+  /* Accent gradient */
+  .accent-gradient {
+    background: linear-gradient(135deg, #4f46e5 0%, #3525cd 100%);
+  }
+}
+
+body {
+  min-height: max(884px, 100dvh);
+}
