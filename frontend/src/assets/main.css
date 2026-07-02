@@ -1,100 +1,18 @@
 @import "tailwindcss";
 
-@theme {
-  --color-primary: #192D40;
-}
-
 * {
-  user-select: none;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  @apply bg-background text-on-background font-body-md min-h-screen;
+  margin: 0;
+  padding: 0;
 }
-
-h1 {
-  @apply text-3xl text-gray-900;
-}
-
-h2 {
-  @apply text-2xl text-gray-800;
-}
-
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px white inset !important;
   box-shadow: 0 0 0 1000px white inset !important;
   -webkit-text-fill-color: #111 !important;
-}
-
-
-
-/* APP INPUT */
-.app-label {
-  font-size: 0.875rem;
-  margin-bottom: 0.25rem;
-  display: block;
-  font-weight: 500;
-  color: #374151; /* gray-700 */
-}
-.app-input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #d1d5db; /* gray-300 */
-  border-radius: 0.375rem; /* rounded-md */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
-  transition: border-color 0.2s, box-shadow 0.2s;
-  background: #fafafa !important;
-}
-button {
-  cursor: pointer;
-}
-
-button[type="submit"] {
-  background-color: #181818;
-  width: 100%;
-  border-radius: 0.75rem;
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-  color: #ffffff;
-}
-
-button.primary, .primary-btn {
-  display: block;
-  text-align: center;
-  background-color: #181818;
-  width: 100%;
-  border-radius: 0.75rem;
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-  color: #ffffff;
-}
-
-button.secondary, .secondary-btn {
-  display: block;
-  text-align: center;
-  background-color: #afafaf;
-  width: 100%;
-  border-radius: 0.75rem;
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-  color: #ffffff;
-}
-
-
-/* FORM */
-
-.app-form-container {
-  margin: 0.5rem;
-  display: flex;
-  gap: 0.5rem;
-  flex-direction: column;
-}
-.error-msg-box {
-  background-color: #fee2e2;
-  border: 1px solid #fca5a5;
-  color: #b91c1c;
-  padding: 0.75rem 1rem;
-  border-radius: 0.375rem;
 }
