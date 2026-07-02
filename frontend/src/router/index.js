@@ -4,14 +4,43 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      name: 'home',
       path: '/',
       component: () => import('@/layouts/AuthLayout.vue'),
       children: [
         {
-          name: 'index',
+          name: 'home',
           path: '',
           component: () => import('@/views/HomeView.vue'),
+        },
+        {
+          name: 'social_accounts',
+          path: 'accounts',
+          component: () => import('@/views/Account/SocialAccountsView.vue'),
+        },
+        {
+          name: 'create_post',
+          path: 'posts/create',
+          component: () => import('@/views/Post/CreatePostView.vue'),
+        },
+        {
+          name: 'posts_list',
+          path: 'posts',
+          component: () => import('@/views/Post/PostsListView.vue'),
+        },
+        {
+          name: 'post_show',
+          path: 'posts/:id',
+          component: () => import('@/views/Post/ShowPostView.vue'),
+        },
+        {
+          name: 'post_edit',
+          path: 'posts/:id/edit',
+          component: () => import('@/views/Post/EditPostView.vue'),
+        },
+        {
+          name: 'calendar',
+          path: 'calendar',
+          component: () => import('@/views/Calendar/CalendarView.vue'),
         },
       ],
     },

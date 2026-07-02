@@ -1,136 +1,105 @@
 <template>
   <main class="p-6">
-
-    <!-- HERO SECTION -->
-    <section class="text-center mb-10">
-      <h1 class="text-3xl font-bold text-gray-800 mb-3">
-        Éditeur de Templates
-      </h1>
-
-      <p class="text-gray-600 max-w-lg mx-auto">
-        Crée, modifie et organise facilement tes templates.
-        Un outil simple, rapide et flexible pensé pour les créateurs.
-      </p>
-
-      <div class="mt-6 flex justify-center gap-4">
-        <router-link
-          to="/templates/create"
-          class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg shadow hover:bg-blue-700 transition"
-        >
-          <i class="fas fa-plus mr-2"></i> Nouveau template
-        </router-link>
-
-        <router-link
-          to="/templates"
-          class="px-6 py-3 bg-gray-100 text-gray-800 font-medium rounded-lg hover:bg-gray-200 transition"
-        >
-          <i class="fas fa-folder-open mr-2"></i> Voir mes templates
-        </router-link>
-      </div>
-    </section>
-
-    <!-- SECTIONS / FEATURES -->
-    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- Créer -->
-      <div class="feature-card">
-        <i class="fas fa-pen-nib feature-icon"></i>
-        <h3 class="feature-title">Créer un Template</h3>
-        <p class="feature-desc">
-          Démarre de zéro ou utilise un modèle préconçu.
-        </p>
+    <router-link
+      :to="{ name: 'social_accounts' }"
+      class="flex items-center justify-between gap-3 p-4 bg-white rounded-xl shadow hover:shadow-md transition"
+    >
+      <div class="flex items-center gap-3">
+        <div class="flex -space-x-2">
+          <span
+            v-for="provider in socialAccountsStore.providers"
+            :key="provider.slug"
+            class="flex items-center justify-center w-8 h-8 rounded-full text-white ring-2 ring-white"
+            :style="{ backgroundColor: provider.color }"
+          >
+            <component :is="provider.icon" class="w-4 h-4" />
+          </span>
+        </div>
+        <div>
+          <p class="font-medium text-gray-900">Réseaux sociaux</p>
+          <p class="text-sm text-gray-500">{{ summary }}</p>
+        </div>
       </div>
 
-      <!-- Modifier -->
-      <div class="feature-card">
-        <i class="fas fa-edit feature-icon"></i>
-        <h3 class="feature-title">Modifier & Personnaliser</h3>
-        <p class="feature-desc">
-          Une interface simple pour organiser textes, images et blocs.
-        </p>
+      <svg class="w-5 h-5 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </router-link>
+
+    <router-link
+      :to="{ name: 'create_post' }"
+      class="flex items-center justify-between gap-3 p-4 mt-4 bg-white rounded-xl shadow hover:shadow-md transition"
+    >
+      <div class="flex items-center gap-3">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+        </span>
+        <div>
+          <p class="font-medium text-gray-900">Créer un post</p>
+          <p class="text-sm text-gray-500">Rédiger et diffuser sur mes réseaux</p>
+        </div>
       </div>
 
-      <!-- Bibliothèque -->
-      <div class="feature-card">
-        <i class="fas fa-layer-group feature-icon"></i>
-        <h3 class="feature-title">Bibliothèque</h3>
-        <p class="feature-desc">
-          Gère tous tes modèles en un endroit, avec aperçu rapide.
-        </p>
+      <svg class="w-5 h-5 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </router-link>
+
+    <router-link
+      :to="{ name: 'posts_list' }"
+      class="flex items-center justify-between gap-3 p-4 mt-4 bg-white rounded-xl shadow hover:shadow-md transition"
+    >
+      <div class="flex items-center gap-3">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/>
+          </svg>
+        </span>
+        <div>
+          <p class="font-medium text-gray-900">Mes posts</p>
+          <p class="text-sm text-gray-500">Historique des posts créés</p>
+        </div>
       </div>
 
-      <!-- Export -->
-      <div class="feature-card">
-        <i class="fas fa-file-export feature-icon"></i>
-        <h3 class="feature-title">Exporter</h3>
-        <p class="feature-desc">
-          Exporte en JSON, HTML, PDF ou formats personnalisés.
-        </p>
+      <svg class="w-5 h-5 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </router-link>
+
+    <router-link
+      :to="{ name: 'calendar' }"
+      class="flex items-center justify-between gap-3 p-4 mt-4 bg-white rounded-xl shadow hover:shadow-md transition"
+    >
+      <div class="flex items-center gap-3">
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </span>
+        <div>
+          <p class="font-medium text-gray-900">Calendrier</p>
+          <p class="text-sm text-gray-500">Voir les publications du mois</p>
+        </div>
       </div>
 
-      <!-- Collaboration -->
-      <div class="feature-card">
-        <i class="fas fa-users feature-icon"></i>
-        <h3 class="feature-title">Collaborer</h3>
-        <p class="feature-desc">
-          Partage tes templates et travaille à plusieurs.
-        </p>
-      </div>
-
-      <!-- Historique -->
-      <div class="feature-card">
-        <i class="fas fa-history feature-icon"></i>
-        <h3 class="feature-title">Historique</h3>
-        <p class="feature-desc">
-          Reviens facilement à la version précédente d’un template.
-        </p>
-      </div>
-
-    </section>
+      <svg class="w-5 h-5 text-gray-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </router-link>
   </main>
 </template>
 
-<style>
-.feature-card {
-  background: white;
-  padding: 22px;
-  border-radius: 14px;
-  text-align: center;
-  border: 1px solid #e5e7eb; /* gray-200 */
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-  border-color: #cbd5e1; /* gray-300 */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
-}
-
-.feature-icon {
-  font-size: 32px;
-  color: #2563eb; /* blue-600 */
-  margin-bottom: 12px;
-}
-
-.feature-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 6px;
-  color: #1f2937; /* gray-800 */
-}
-
-.feature-desc {
-  font-size: 14px;
-  color: #6b7280; /* gray-500 */
-}
-</style>
-
 <script setup>
-import {computed} from 'vue';
-import {useAuthStore} from "@/stores/auth.js";
+import { computed } from 'vue';
+import { useSocialAccountsStore } from '@/stores/socialAccounts.js';
 
-const authStore = useAuthStore();
+const socialAccountsStore = useSocialAccountsStore();
 
-const user = computed(() => authStore.user);
+const summary = computed(() =>
+  socialAccountsStore.totalConnected
+    ? `${socialAccountsStore.totalConnected} compte${socialAccountsStore.totalConnected > 1 ? 's' : ''} connecté${socialAccountsStore.totalConnected > 1 ? 's' : ''}`
+    : 'Gérer mes comptes connectés'
+);
 </script>

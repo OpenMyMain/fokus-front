@@ -44,9 +44,9 @@
 
       <!-- PROFIL -->
       <router-link
-        :to="{name: 'home'}"
+        :to="{name: 'social_accounts'}"
         class="nav-item"
-        :class="{ active: $route.name === 'profile' }"
+        :class="{ active: $route.name === 'social_accounts' }"
       >
         <i class="fas fa-user nav-icon"></i>
         <span>Profil</span>
