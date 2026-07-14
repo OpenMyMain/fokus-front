@@ -1,0 +1,21 @@
+{
+  "projectListView": {
+    "title": "Mes Projets",
+    "subtitle": "Gérez vos projets et organisez vos tâches",
+    "emptyTitle": "Aucun projet",
+    "emptyMessage": "Créez votre premier projet pour commencer à organiser votre travail",
+    "createButtonLabel": "Créer un nouveau projet",
+    "modalTitle": "Créer un nouveau projet",
+    "nameLabel": "Nom du projet",
+    "namePlaceholder": "Entrez le nom de votre projet",
+    "typeLabel": "Type de projet",
+    "typeNone": "Aucun type",
+    "nameRequired": "Le nom du projet est requis",
+    "submitButton": "Créer",
+    "creating": "Création...",
+    "createSuccess": "Projet créé avec succès",
+    "createError": "Une erreur est survenue lors de la création du projet",
+    "loadError": "Une erreur est survenue lors du chargement des projets",
+    "loadTypeError": "Une erreur est survenue lors du chargement des types de projet"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "projectListView": {
+    "title": "My Projects",
+    "subtitle": "Manage your projects and organize your tasks",
+    "emptyTitle": "No projects",
+    "emptyMessage": "Create your first project to start organizing your work",
+    "createButtonLabel": "Create a new project",
+    "modalTitle": "Create a new project",
+    "nameLabel": "Project name",
+    "namePlaceholder": "Enter your project name",
+    "typeLabel": "Project type",
+    "typeNone": "No type",
+    "nameRequired": "Project name is required",
+    "submitButton": "Create",
+    "creating": "Creating...",
+    "createSuccess": "Project created successfully",
+    "createError": "An error occurred while creating the project",
+    "loadError": "An error occurred while loading projects",
+    "loadTypeError": "An error occurred while loading project types"
+  }
+}
