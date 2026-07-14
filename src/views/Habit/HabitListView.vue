@@ -66,17 +66,17 @@
                 schedule
               </span>
               <span class="inline-block px-2 py-1 bg-primary-container dark:bg-blue-900 text-primary dark:text-blue-200 rounded font-label-sm text-label-sm">
-                {{ getFrequencyLabel(habit.recurrence_pattern) }}
+                {{ getFrequencyLabel(habit.recurrencePattern) }}
               </span>
             </div>
             <!-- Days indicator for weekly habits -->
-            <div v-if="habit.recurrence_pattern?.type === 'weekly' && habit.recurrence_pattern?.weekDays?.length" class="flex gap-1">
+            <div v-if="habit.recurrencePattern?.type?.toLowerCase() === 'weekly' && habit.recurrencePattern?.weekDays?.length" class="flex gap-1">
               <div
                 v-for="(dayLabel, index) in dayLabels"
                 :key="index"
                 :class="[
                   'w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold',
-                  habit.recurrence_pattern.weekDays.includes(index)
+                  habit.recurrencePattern.weekDays.includes(index)
                     ? 'bg-primary text-on-primary dark:bg-blue-500 dark:text-white'
                     : 'bg-surface-container text-outline dark:bg-slate-700 dark:text-slate-500'
                 ]"
@@ -313,11 +313,12 @@ const getIntervalText = () => {
 }
 
 const getFrequencyLabel = (recurrencePattern) => {
+  console.log(recurrencePattern);
   if (!recurrencePattern) return t('habitListView.frequencyDaily')
 
-  const type = recurrencePattern.type || recurrencePattern
+  const type = (recurrencePattern.type || recurrencePattern).toLowerCase()
   const interval = recurrencePattern.interval || 1
-
+  console.log(type);
   if (type === 'daily') {
     if (interval === 1) {
       return t('habitListView.frequencyDaily')
@@ -343,7 +344,7 @@ const getFrequencyLabel = (recurrencePattern) => {
       ? t('habitListView.frequencyMonthly')
       : `Tous les ${interval} mois`
 
-    if (recurrencePattern.dayOfMonth) {
+    if (recurrencePattern.dayOfMonth && recurrencePattern.dayOfMonth > 0) {
       return `${baseLabel} (${recurrencePattern.dayOfMonth})`
     }
     return baseLabel
