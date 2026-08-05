@@ -1,0 +1,25 @@
+{
+  "taskDetailView": {
+    "backButtonLabel": "Back",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Add a description... (markdown supported)",
+    "noDescription": "No description yet.",
+    "markdownHint": "Markdown formatting: # Heading, **bold**, - list, [link](url)...",
+    "previewTab": "Preview",
+    "editTab": "Edit",
+    "titleLabel": "Title",
+    "statusLabel": "Status",
+    "statusTodo": "To do",
+    "statusIn_progress": "In progress",
+    "statusDone": "Done",
+    "priorityLabel": "Priority",
+    "priorityLow": "Low",
+    "priorityMedium": "Medium",
+    "priorityHigh": "High",
+    "dueDateLabel": "Due date",
+    "saving": "Saving...",
+    "updateSuccess": "Task updated",
+    "updateError": "An error occurred while updating the task",
+    "loadError": "Unable to load the task"
+  }
+}

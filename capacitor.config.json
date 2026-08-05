@@ -1,13 +1,21 @@
 {
-  "appId": "com.openmymain.studio",
-  "appName": "MyStudio",
-  "webDir": "frontend/dist",
+  "appId": "com.openmymain.fokus",
+  "appName": "Fokus",
+  "webDir": "dist",
   "server": {
-    "androidScheme": "https"
+    "androidScheme": "https",
+    "allowNavigation": [
+      "*.fokus.aurelie",
+      "fokus.aurelie"
+    ]
   },
   "plugins": {
     "SplashScreen": {
       "launchAutoHide": true
+    },
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_fokus",
+      "iconColor": "#AD1EDD"
     }
   }
 }

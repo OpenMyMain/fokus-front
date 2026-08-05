@@ -1,0 +1,49 @@
+{
+  "notificationLabView": {
+    "title": "Notification test bench",
+    "subtitle": "Checks on a real device that a break alarm actually wakes you up (T-13b).",
+    "webWarning": "Local notifications only exist in the Android app. On the web, every button below does nothing.",
+    "statusTitle": "Status",
+    "platform": "Platform",
+    "permission": "Display permission",
+    "granted": "granted",
+    "denied": "denied",
+    "lastError": "Last error",
+    "initialize": "Request permission and create channels",
+    "scheduleTitle": "Schedule an alarm",
+    "channelLabel": "Channel",
+    "delayLabel": "In (seconds)",
+    "channels": {
+      "alarm": "fokus-alarm-v1 — MAX importance",
+      "pluginDefault": "default — plugin channel",
+      "reminder": "fokus-reminder-v1 — HIGH importance"
+    },
+    "hints": {
+      "alarm": "MAX importance: heads-up banner and vibration. Its sound goes through USAGE_NOTIFICATION though, so silent mode should mute it.",
+      "pluginDefault": "The only channel using USAGE_ALARM, so it should ring even in silent mode — but at DEFAULT importance, so no banner. This comparison decides whether native code is needed.",
+      "reminder": "The habit reminder channel: neither alarm nor silent-mode bypass. Used as a control."
+    },
+    "schedule": "Schedule",
+    "refreshPending": "Refresh",
+    "cancel": "Cancel alarm",
+    "scheduled": "Alarm scheduled for {time}",
+    "scheduleFailed": "Could not schedule the alarm",
+    "pendingTitle": "Pending ({count})",
+    "pendingEmpty": "No scheduled notification.",
+    "logTitle": "Log",
+    "logEmpty": "Nothing yet. Actions received from a notification will show up here.",
+    "actions": {
+      "complete": "\"Done\" action",
+      "snooze": "\"Snooze\" action",
+      "tap": "notification tapped",
+      "unknown": "unknown action \"{actionId}\""
+    },
+    "protocolTitle": "Test protocol",
+    "protocol": {
+      "locked": "Locked screen: does the alarm show on top of it, or do you have to unlock to see it?",
+      "silent": "Silent mode and Do Not Disturb: does the sound still come through?",
+      "killed": "App swiped away from recents: does the alarm still ring, and does \"Snooze\" relaunch the app?",
+      "doze": "Phone left idle for 30 minutes (Doze): schedule at +20 min and compare the actual time to the planned one."
+    }
+  }
+}

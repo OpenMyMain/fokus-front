@@ -1,0 +1,38 @@
+{
+  "kitUiView": {
+    "title": "Composant Kit UI",
+    "placeholder": "Ceci est un espace réservé pour la vue du composant Kit UI.",
+    "allElementsTitle": "Tous les éléments UI",
+    "elements": {
+      "fonts": "Polices",
+      "colors": "Couleurs",
+      "titles": "Les titres",
+      "buttons": "Les boutons",
+      "forms": "Les formulaires",
+      "cards": "Les cartes",
+      "modals": "Les modales",
+      "alerts": "Les alertes",
+      "notifications": "Les notifications",
+      "tables": "Les tableaux",
+      "tabs": "Les tabs / onglets",
+      "accordion": "Accordéon",
+      "icons": "Les icônes",
+      "badges": "Les badges",
+      "navbars": "Les barres de navigation",
+      "components": "Les components",
+      "calendars": "Les calendriers"
+    },
+    "colorsTitle": "Les couleurs",
+    "colorName": "Nom",
+    "colorHex": "HEX",
+    "titlesTitle": "Les titres",
+    "titleExamples": {
+      "h1": "Titre H1 - Exemple",
+      "h2": "Titre H2 - Exemple",
+      "h3": "Titre H3 - Exemple",
+      "h4": "Titre H4 - Exemple",
+      "h5": "Titre H5 - Exemple",
+      "h6": "Titre H6 - Exemple"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "registerChoiceView": {
+    "title": "Sign up for free",
+    "description": "Pick how you want to create your account, then keep your days, habits and projects in one place.",
+    "or": "OR",
+    "signUpWithEmail": "Sign up with email",
+    "termsNotice": "By continuing, you agree to our {terms} and our {privacy}.",
+    "termsOfService": "terms of service",
+    "privacyPolicy": "privacy policy",
+    "alreadyMember": "Already a member?",
+    "login": "Log in"
+  }
+}

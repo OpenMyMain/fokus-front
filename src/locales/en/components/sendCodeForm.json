@@ -1,0 +1,9 @@
+{
+  "sendCodeForm": {
+    "emailLabel": "Email",
+    "submit": "Send link",
+    "submitting": "Sending...",
+    "successMessage": "If an account exists with this email, a reset link has just been sent to it.",
+    "genericError": "An error occurred. Please try again."
+  }
+}

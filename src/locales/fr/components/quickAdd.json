@@ -1,0 +1,20 @@
+{
+  "quickAdd": {
+    "title": "Nouvelle tâche",
+    "taskLabel": "Que faut-il faire ?",
+    "taskPlaceholder": "ex. Appeler le comptable",
+    "projectLabel": "Projet",
+    "newProjectOption": "+ Nouveau projet",
+    "newProjectLabel": "Nom du nouveau projet",
+    "newProjectPlaceholder": "ex. Comptabilité",
+    "priorityLabel": "Urgence",
+    "priorityLow": "Basse",
+    "priorityMedium": "Moyenne",
+    "priorityHigh": "Haute",
+    "dueDateLabel": "Échéance",
+    "submit": "Ajouter",
+    "creating": "Ajout...",
+    "success": "Tâche ajoutée",
+    "error": "Une erreur est survenue lors de l'ajout de la tâche"
+  }
+}

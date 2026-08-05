@@ -1,0 +1,12 @@
+{
+  "registerForm": {
+    "firstnameLabel": "Prénom",
+    "lastnameLabel": "Nom",
+    "emailLabel": "Email",
+    "passwordLabel": "Mot de passe",
+    "confirmPasswordLabel": "Confirmer le mot de passe",
+    "submit": "S'inscrire",
+    "passwordMismatch": "Les mots de passe ne correspondent pas !",
+    "genericError": "Erreur lors de l'inscription."
+  }
+}

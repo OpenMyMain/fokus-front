@@ -1,0 +1,13 @@
+{
+  "registerChoiceView": {
+    "title": "S'inscrire gratuitement",
+    "description": "Choisissez comment créer votre compte, puis retrouvez vos journées, vos habitudes et vos projets au même endroit.",
+    "or": "OU",
+    "signUpWithEmail": "S'inscrire avec un email",
+    "termsNotice": "En continuant, vous acceptez nos {terms} et notre {privacy}.",
+    "termsOfService": "conditions de service",
+    "privacyPolicy": "politique de confidentialité",
+    "alreadyMember": "Vous êtes déjà membre ?",
+    "login": "Se connecter"
+  }
+}

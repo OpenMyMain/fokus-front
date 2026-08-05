@@ -1,0 +1,7 @@
+{
+  "notFoundView": {
+    "title": "This page does not exist",
+    "message": "The link may be outdated, or the address contains a typo.",
+    "backHome": "Back to home"
+  }
+}

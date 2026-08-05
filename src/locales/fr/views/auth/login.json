@@ -1,0 +1,8 @@
+{
+  "loginView": {
+    "greeting": "Bonjour, ravis de vous revoir !",
+    "or": "OU",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "createAccount": "Créer un compte"
+  }
+}

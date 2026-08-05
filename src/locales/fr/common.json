@@ -1,0 +1,19 @@
+{
+  "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "confirm": "Confirmer",
+    "loading": "Chargement...",
+    "search": "Rechercher",
+    "close": "Fermer",
+    "yes": "Oui",
+    "no": "Non",
+    "back": "Retour",
+    "add": "Ajouter",
+    "send": "Envoyer",
+    "createdAt": "Créé le",
+    "required": "est requis"
+  }
+}

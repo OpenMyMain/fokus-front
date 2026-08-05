@@ -1,0 +1,36 @@
+{
+  "localNotifications": {
+    "channels": {
+      "alarm": {
+        "name": "Alarmes de pause",
+        "description": "Sonne à la fin d'un temps de focus pour vous faire lever."
+      },
+      "reminder": {
+        "name": "Rappels",
+        "description": "Rappels d'habitudes et de rendez-vous."
+      }
+    },
+    "break": {
+      "title": "C'est l'heure de la pause",
+      "body": "Levez-vous et bougez quelques minutes.",
+      "bodySnoozed": "Pause reportée {count} fois. Levez-vous maintenant.",
+      "largeBody": "Levez-vous, étirez-vous, marchez un peu. Deux minutes suffisent à relancer la concentration.",
+      "largeBodyWithFocus": "{minutes} minutes de concentration, c'est fait. Levez-vous, étirez-vous, marchez un peu avant de repartir.",
+      "summary": "Fokus · pause"
+    },
+    "breakActions": {
+      "complete": "C'est fait",
+      "snooze": "Reporter de 10 min"
+    },
+    "habit": {
+      "body": "C'est le moment de cocher cette habitude."
+    },
+    "habitActions": {
+      "complete": "Fait"
+    },
+    "focus": {
+      "title": "Focus de {minutes} min en cours",
+      "body": "Fin prévue à {time}."
+    }
+  }
+}

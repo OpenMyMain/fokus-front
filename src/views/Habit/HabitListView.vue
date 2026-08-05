@@ -48,7 +48,7 @@
             <button
               @click="deleteHabit(habit.id)"
               class="text-outline dark:text-slate-400 hover:text-error dark:hover:text-red-400 transition-colors"
-              :aria-label="t('habitListView.deleteConfirm')"
+              :aria-label="t('habitListView.deleteConfirmTitle')"
             >
               <span class="material-symbols-outlined text-[20px]">close</span>
             </button>
@@ -87,12 +87,12 @@
           </div>
 
           <!-- Reminder -->
-          <div v-if="habit.reminder" class="flex items-center gap-2">
+          <div v-if="habit.reminderTime" class="flex items-center gap-2">
             <span class="material-symbols-outlined text-[18px] text-on-surface-variant dark:text-slate-400">
               notifications
             </span>
             <span class="font-body-sm text-body-sm text-on-surface-variant dark:text-slate-400">
-              {{ habit.reminderTime || 'Rappel activé' }}
+              {{ formatReminderTime(habit.reminderTime) }}
             </span>
           </div>
 
@@ -247,6 +247,7 @@ import { ref, onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useHabitsStore } from '@/stores/habits'
 import { useToast } from '@/composables/useToast'
+import { useConfirm } from '@/composables/useConfirm.js'
 import { getLocale } from '@/plugins/i18n.js'
 import AppModal from '@/components/Common/AppModal.vue'
 import AppInput from '@/components/Common/Form/AppInput.vue'
@@ -257,6 +258,7 @@ import AppFloatButton from '@/components/Common/Button/AppFloatButton.vue'
 const { t } = useI18n()
 const habitsStore = useHabitsStore()
 const toast = useToast()
+const { confirm } = useConfirm()
 const currentLocale = getLocale()
 
 const createModal = ref(null)
@@ -287,70 +289,59 @@ const frequencyOptions = computed(() => [
   { value: 'monthly', label: t('habitListView.frequencyMonthly') },
 ])
 
-const getIntervalText = () => {
-  const freq = habitFrequency.value
-  const interval = habitInterval.value || 1
-
-  if (freq === 'daily') {
-    return interval === 1
-      ? t('habitListView.frequencyDaily')
-      : `${t('habitListView.frequencyLabel')}: tous les ${interval} ${t('habitListView.intervalDays')}`
-  }
-
-  if (freq === 'weekly') {
-    return interval === 1
-      ? t('habitListView.frequencyWeekly')
-      : `${t('habitListView.frequencyLabel')}: toutes les ${interval} ${t('habitListView.intervalWeeks')}`
-  }
-
-  if (freq === 'monthly') {
-    return interval === 1
-      ? t('habitListView.frequencyMonthly')
-      : `${t('habitListView.frequencyLabel')}: tous les ${interval} ${t('habitListView.intervalMonths')}`
-  }
-
-  return ''
+// Libellé d'une récurrence, sans les précisions de jour : « Tous les jours »,
+// « Toutes les 3 semaines »… Les variantes pluralisées passent par l'i18n (T-41) : les
+// libellés étaient écrits en français en dur, l'app anglaise affichait donc du français.
+const RECURRENCE_LABELS = {
+  daily: { single: 'frequencyDaily', many: 'everyNDays' },
+  weekly: { single: 'frequencyWeekly', many: 'everyNWeeks' },
+  monthly: { single: 'frequencyMonthly', many: 'everyNMonths' },
 }
 
+const recurrenceLabel = (type, interval) => {
+  const keys = RECURRENCE_LABELS[type]
+
+  if (!keys) return ''
+
+  return interval === 1
+    ? t(`habitListView.${keys.single}`)
+    : t(`habitListView.${keys.many}`, { count: interval })
+}
+
+const getIntervalText = () => recurrenceLabel(habitFrequency.value, habitInterval.value || 1)
+
 const getFrequencyLabel = (recurrencePattern) => {
-  console.log(recurrencePattern);
   if (!recurrencePattern) return t('habitListView.frequencyDaily')
 
+  // `recurrencePattern` peut être l'objet complet ou, sur d'anciennes données, le seul type.
   const type = (recurrencePattern.type || recurrencePattern).toLowerCase()
-  const interval = recurrencePattern.interval || 1
-  console.log(type);
-  if (type === 'daily') {
-    if (interval === 1) {
-      return t('habitListView.frequencyDaily')
-    }
-    return `Tous les ${interval} jours`
+  const baseLabel = recurrenceLabel(type, recurrencePattern.interval || 1)
+
+  if (!baseLabel) return t('habitListView.frequencyDaily')
+
+  if (type === 'weekly' && recurrencePattern.weekDays?.length) {
+    const selectedDays = recurrencePattern.weekDays.map(i => dayLabels.value[i]).join(', ')
+
+    return `${baseLabel} (${selectedDays})`
   }
 
-  if (type === 'weekly') {
-    const baseLabel = interval === 1
-      ? t('habitListView.frequencyWeekly')
-      : `Toutes les ${interval} semaines`
-
-    if (recurrencePattern.weekDays?.length) {
-      const dayLabelsList = dayLabels.value
-      const selectedDays = recurrencePattern.weekDays.map(i => dayLabelsList[i]).join(', ')
-      return `${baseLabel} (${selectedDays})`
-    }
-    return baseLabel
+  if (type === 'monthly' && recurrencePattern.dayOfMonth > 0) {
+    return `${baseLabel} (${recurrencePattern.dayOfMonth})`
   }
 
-  if (type === 'monthly') {
-    const baseLabel = interval === 1
-      ? t('habitListView.frequencyMonthly')
-      : `Tous les ${interval} mois`
+  return baseLabel
+}
 
-    if (recurrencePattern.dayOfMonth && recurrencePattern.dayOfMonth > 0) {
-      return `${baseLabel} (${recurrencePattern.dayOfMonth})`
-    }
-    return baseLabel
+const formatReminderTime = (reminderTime) => {
+  if (!reminderTime) return ''
+  // Le backend renvoie une heure au format ISO datetime (ex. 1970-01-01T08:00:00+00:00).
+  // On extrait directement HH:MM de la chaîne pour éviter tout décalage de fuseau horaire :
+  // l'heure du rappel est une heure "murale" (celle saisie), pas un instant absolu.
+  const match = String(reminderTime).match(/T?(\d{2}):(\d{2})/)
+  if (match) {
+    return `${match[1]}:${match[2]}`
   }
-
-  return t('habitListView.frequencyDaily')
+  return reminderTime
 }
 
 const openCreateModal = () => {
@@ -432,7 +423,14 @@ const submitCreate = async () => {
 }
 
 const deleteHabit = async (id) => {
-  if (!confirm(t('habitListView.deleteConfirm'))) {
+  const confirmed = await confirm({
+    title: t('habitListView.deleteConfirmTitle'),
+    body: t('habitListView.deleteConfirm'),
+    confirmLabel: t('common.delete'),
+    danger: true,
+  })
+
+  if (!confirmed) {
     return
   }
 

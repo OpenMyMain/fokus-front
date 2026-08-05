@@ -1,0 +1,9 @@
+{
+  "sendCodeForm": {
+    "emailLabel": "Email",
+    "submit": "Envoyer le lien",
+    "submitting": "Envoi en cours...",
+    "successMessage": "Si un compte existe avec cet email, un lien de réinitialisation vient de lui être envoyé.",
+    "genericError": "Une erreur est survenue. Veuillez réessayer."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kitUiView": {
+    "title": "Kit UI Component",
+    "placeholder": "This is a placeholder for the Kit UI component view.",
+    "allElementsTitle": "All UI elements",
+    "elements": {
+      "fonts": "Fonts",
+      "colors": "Colors",
+      "titles": "Titles",
+      "buttons": "Buttons",
+      "forms": "Forms",
+      "cards": "Cards",
+      "modals": "Modals",
+      "alerts": "Alerts",
+      "notifications": "Notifications",
+      "tables": "Tables",
+      "tabs": "Tabs",
+      "accordion": "Accordion",
+      "icons": "Icons",
+      "badges": "Badges",
+      "navbars": "Navigation bars",
+      "components": "Components",
+      "calendars": "Calendars"
+    },
+    "colorsTitle": "Colors",
+    "colorName": "Name",
+    "colorHex": "HEX",
+    "titlesTitle": "Titles",
+    "titleExamples": {
+      "h1": "Title H1 - Example",
+      "h2": "Title H2 - Example",
+      "h3": "Title H3 - Example",
+      "h4": "Title H4 - Example",
+      "h5": "Title H5 - Example",
+      "h6": "Title H6 - Example"
+    }
+  }
+}

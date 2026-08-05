@@ -1,0 +1,11 @@
+{
+  "registerView": {
+    "title": "Sign up for free",
+    "description": "A few details and your account is ready.",
+    "termsNotice": "By continuing, you agree to our {terms} and our {privacy}.",
+    "termsOfService": "terms of service",
+    "privacyPolicy": "privacy policy",
+    "alreadyMember": "Already a member?",
+    "login": "Log in"
+  }
+}

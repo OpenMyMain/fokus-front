@@ -1,0 +1,8 @@
+{
+  "loginView": {
+    "greeting": "Hello, welcome back!",
+    "or": "OR",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create account"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "notificationLabView": {
+    "title": "Banc d'essai des notifications",
+    "subtitle": "Vérifie sur un vrai appareil qu'une alarme de pause réveille bien (T-13b).",
+    "webWarning": "Les notifications locales n'existent que sur l'app Android. Sur le web, tous les boutons sont sans effet.",
+    "statusTitle": "État",
+    "platform": "Plateforme",
+    "permission": "Permission d'affichage",
+    "granted": "accordée",
+    "denied": "refusée",
+    "lastError": "Dernière erreur",
+    "initialize": "Demander la permission et créer les canaux",
+    "scheduleTitle": "Planifier une alarme",
+    "channelLabel": "Canal",
+    "delayLabel": "Dans (secondes)",
+    "channels": {
+      "alarm": "fokus-alarm-v1 — importance MAX",
+      "pluginDefault": "default — canal du plugin",
+      "reminder": "fokus-reminder-v1 — importance HIGH"
+    },
+    "hints": {
+      "alarm": "Importance MAX : bandeau en haut de l'écran et vibration. Le son passe en revanche par USAGE_NOTIFICATION, donc le mode silencieux devrait l'étouffer.",
+      "pluginDefault": "Le seul canal en USAGE_ALARM, donc censé sonner même en silencieux — mais en importance DEFAULT, donc sans bandeau. C'est la comparaison qui décide s'il faut du code natif.",
+      "reminder": "Le canal des rappels d'habitudes : ni alarme, ni contournement du silencieux. Sert de témoin."
+    },
+    "schedule": "Planifier",
+    "refreshPending": "Rafraîchir",
+    "cancel": "Annuler l'alarme",
+    "scheduled": "Alarme planifiée pour {time}",
+    "scheduleFailed": "Impossible de planifier l'alarme",
+    "pendingTitle": "En attente ({count})",
+    "pendingEmpty": "Aucune notification planifiée.",
+    "logTitle": "Journal",
+    "logEmpty": "Rien pour l'instant. Les actions reçues depuis une notification s'afficheront ici.",
+    "actions": {
+      "complete": "action « C'est fait »",
+      "snooze": "action « Reporter »",
+      "tap": "clic sur la notification",
+      "unknown": "action inconnue « {actionId} »"
+    },
+    "protocolTitle": "Protocole de test",
+    "protocol": {
+      "locked": "Écran verrouillé : l'alarme s'affiche-t-elle par-dessus, ou faut-il déverrouiller pour la voir ?",
+      "silent": "Mode silencieux et Ne pas déranger : le son passe-t-il quand même ?",
+      "killed": "App fermée depuis la liste des tâches : l'alarme sonne-t-elle encore, et « Reporter » relance-t-il l'app ?",
+      "doze": "Téléphone posé et inactif 30 minutes (Doze) : planifier à +20 min et comparer l'heure réelle à l'heure prévue."
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "localNotifications": {
+    "channels": {
+      "alarm": {
+        "name": "Break alarms",
+        "description": "Rings at the end of a focus session to get you up."
+      },
+      "reminder": {
+        "name": "Reminders",
+        "description": "Habit and appointment reminders."
+      }
+    },
+    "break": {
+      "title": "Time for a break",
+      "body": "Stand up and move for a few minutes.",
+      "bodySnoozed": "Break snoozed {count} times. Get up now.",
+      "largeBody": "Stand up, stretch, walk around. Two minutes are enough to get your focus back.",
+      "largeBodyWithFocus": "{minutes} minutes of focus, done. Stand up, stretch and walk a little before the next one.",
+      "summary": "Fokus · break"
+    },
+    "breakActions": {
+      "complete": "Done",
+      "snooze": "Snooze 10 min"
+    },
+    "habit": {
+      "body": "Time to check off this habit."
+    },
+    "habitActions": {
+      "complete": "Done"
+    },
+    "focus": {
+      "title": "{minutes} min focus running",
+      "body": "Ends at {time}."
+    }
+  }
+}

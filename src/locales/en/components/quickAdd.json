@@ -1,0 +1,20 @@
+{
+  "quickAdd": {
+    "title": "New task",
+    "taskLabel": "What needs to be done?",
+    "taskPlaceholder": "e.g. Call the accountant",
+    "projectLabel": "Project",
+    "newProjectOption": "+ New project",
+    "newProjectLabel": "New project name",
+    "newProjectPlaceholder": "e.g. Accounting",
+    "priorityLabel": "Urgency",
+    "priorityLow": "Low",
+    "priorityMedium": "Medium",
+    "priorityHigh": "High",
+    "dueDateLabel": "Due date",
+    "submit": "Add",
+    "creating": "Adding...",
+    "success": "Task added",
+    "error": "An error occurred while adding the task"
+  }
+}

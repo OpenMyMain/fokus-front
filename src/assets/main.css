@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+@import "./profile-styles.css";
+
+/* NB : pas de reset `* { margin:0; padding:0 }` non-layé ici.
+   En Tailwind v4 il écraserait tous les utilitaires d'espacement
+   (p-6, pt-16, mt-*, space-y-*) car le hors-layer prime sur @layer.
+   Le preflight de Tailwind gère déjà ces resets. */
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #111 !important;
+}
+
+.dark input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #1e293b inset !important;
+  box-shadow: 0 0 0 1000px #1e293b inset !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}

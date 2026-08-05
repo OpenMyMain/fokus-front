@@ -1,12 +1,35 @@
-## Created with Capacitor Create App
+# frontend
 
-This app was created using [`@capacitor/create-app`](https://github.com/ionic-team/create-capacitor-app),
-and comes with a very minimal shell for building an app.
+This template should help get you started developing with Vue 3 in Vite.
 
-### Running this example
+## Recommended IDE Setup
 
-To run the provided example, you can use `npm start` command.
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-```bash
-npm start
+## Customize configuration
+
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
 ```

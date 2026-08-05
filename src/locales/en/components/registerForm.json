@@ -1,0 +1,12 @@
+{
+  "registerForm": {
+    "firstnameLabel": "Firstname",
+    "lastnameLabel": "Lastname",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "confirmPasswordLabel": "Confirm password",
+    "submit": "Register",
+    "passwordMismatch": "Passwords do not match!",
+    "genericError": "Registration failed."
+  }
+}

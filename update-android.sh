@@ -2,18 +2,19 @@
 
 set -e  # Arrête le script si une commande échoue
 
-echo "▶️  Build du frontend Vue..."
-cd frontend
+APP_ID=$(jq -r '.appId' capacitor.config.json)
+
+echo "▶️  Build de l'app Vue..."
 npm run build
 
-echo "🔄 Retour à la racine Capacitor..."
-cd ..
-
 echo "🔗 Synchronisation Capacitor..."
-npx cap sync
+npx cap sync android
 
-echo "🧹 Nettoyage & compilation Android..."
+echo "📱 Installation sur l'appareil branché..."
 cd android
-./gradlew clean assembleDebug
+./gradlew clean installDebug
 
-echo "✅ Terminé ! APK debug prête."
+echo "🚀 Lancement de l'app..."
+adb shell monkey -p "$APP_ID" -c android.intent.category.LAUNCHER 1
+
+echo "✅ Terminé ! App installée et lancée sur l'appareil."

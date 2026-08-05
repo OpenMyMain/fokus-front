@@ -1,0 +1,7 @@
+{
+  "notFoundView": {
+    "title": "Cette page n'existe pas",
+    "message": "Le lien est peut-être périmé, ou l'adresse comporte une faute de frappe.",
+    "backHome": "Retour à l'accueil"
+  }
+}

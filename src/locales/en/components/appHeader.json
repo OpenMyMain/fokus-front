@@ -1,0 +1,19 @@
+{
+  "appHeader": {
+    "openAccountMenu": "Open account menu",
+    "profileAlt": "Profile",
+    "myAccount": "My account",
+    "manageYourSpace": "Manage your space",
+    "menuProjects": "Projects",
+    "menuHabits": "Habits",
+    "menuPlanning": "Planning",
+    "menuAppointments": "Appointments",
+    "menuProfile": "Profile",
+    "menuLogout": "Log out",
+    "quickAdd": "Add a task",
+    "focusRunning": "Focus session running",
+    "focusBreak": "Break!",
+    "menuToday": "Today",
+    "menuFocus": "Focus"
+  }
+}

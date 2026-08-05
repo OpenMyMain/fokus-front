@@ -1,0 +1,11 @@
+{
+  "registerView": {
+    "title": "S'inscrire gratuitement",
+    "description": "Quelques informations et votre compte est prêt.",
+    "termsNotice": "En continuant, vous acceptez nos {terms} et notre {privacy}.",
+    "termsOfService": "conditions de service",
+    "privacyPolicy": "politique de confidentialité",
+    "alreadyMember": "Vous êtes déjà membre ?",
+    "login": "Se connecter"
+  }
+}

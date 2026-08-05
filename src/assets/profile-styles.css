@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+/* Fix Tailwind maxWidth utilities that were using spacing scale */
+@layer utilities {
+  .max-w-xs { @apply max-w-[20rem]; }
+  .max-w-sm { @apply max-w-[24rem]; }
+  .max-w-md { @apply max-w-[28rem]; }
+  .max-w-lg { @apply max-w-[32rem]; }
+  .max-w-xl { @apply max-w-[36rem]; }
+  .max-w-2xl { @apply max-w-[42rem]; }
+  .max-w-3xl { @apply max-w-[48rem]; }
+  .max-w-4xl { @apply max-w-[56rem]; }
+  .max-w-5xl { @apply max-w-[64rem]; }
+  .max-w-6xl { @apply max-w-[72rem]; }
+  .max-w-7xl { @apply max-w-[80rem]; }
+}
+
+/* Custom spacing classes */
+@layer components {
+  /* Spacing utilities */
+  .px-margin-mobile { @apply px-5; }
+  .px-margin-desktop { @apply px-10; }
+  .py-margin-mobile { @apply py-5; }
+  .py-margin-desktop { @apply py-10; }
+
+  .space-y-xl { @apply space-y-8; }
+  .space-y-lg { @apply space-y-6; }
+  .space-y-md { @apply space-y-4; }
+  .space-y-sm { @apply space-y-2; }
+  .space-y-xs { @apply space-y-1; }
+
+  .gap-xl { @apply gap-8; }
+  .gap-lg { @apply gap-6; }
+  .gap-md { @apply gap-4; }
+  .gap-sm { @apply gap-2; }
+  .gap-xs { @apply gap-1; }
+
+  .mt-lg { @apply mt-6; }
+  .mt-md { @apply mt-4; }
+  .mt-sm { @apply mt-2; }
+
+  .mb-lg { @apply mb-6; }
+  .mb-md { @apply mb-4; }
+  .mb-sm { @apply mb-2; }
+
+  .pt-lg { @apply pt-6; }
+  .pb-lg { @apply pb-6; }
+
+  /* Typography classes */
+  .font-display-lg { @apply font-bold; font-family: 'Inter', sans-serif; font-size: 32px; line-height: 40px; letter-spacing: -0.02em; font-weight: 700; }
+  .text-display-lg { font-size: 32px; line-height: 40px; letter-spacing: -0.02em; }
+
+  .font-headline-md { font-family: 'Inter', sans-serif; font-size: 24px; line-height: 32px; letter-spacing: -0.01em; font-weight: 600; }
+  .text-headline-md { font-size: 24px; line-height: 32px; letter-spacing: -0.01em; }
+
+  .font-headline-sm { font-family: 'Inter', sans-serif; font-size: 20px; line-height: 28px; font-weight: 600; }
+  .text-headline-sm { font-size: 20px; line-height: 28px; }
+
+  .font-body-lg { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 24px; font-weight: 400; }
+  .text-body-lg { font-size: 16px; line-height: 24px; }
+
+  .font-body-md { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 20px; font-weight: 400; }
+  .text-body-md { font-size: 14px; line-height: 20px; }
+
+  .font-body-sm { font-family: 'Inter', sans-serif; font-size: 13px; line-height: 18px; font-weight: 400; }
+  .text-body-sm { font-size: 13px; line-height: 18px; }
+
+  .font-label-md { font-family: 'Inter', sans-serif; font-size: 12px; line-height: 16px; letter-spacing: 0.05em; font-weight: 600; }
+  .text-label-md { font-size: 12px; line-height: 16px; letter-spacing: 0.05em; }
+
+  /* Glass card effect */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  }
+
+  .dark .glass-card {
+    background: rgba(30, 41, 59, 0.9) !important;
+    border: 1px solid rgba(148, 163, 184, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* Accent gradient */
+  .accent-gradient {
+    background: linear-gradient(135deg, #4f46e5 0%, #3525cd 100%);
+  }
+
+  /* Danger zone styling */
+  .danger-zone {
+    background: rgba(250, 235, 215, 0.2);
+    border-color: rgba(186, 26, 26, 0.3);
+  }
+
+  .dark .danger-zone {
+    background: rgba(127, 29, 29, 0.3);
+    border-color: rgba(220, 38, 38, 0.5);
+  }
+
+  /* Profile button in header */
+  .profile-menu-btn {
+    @apply md:bg-surface-container-low md:hover:bg-surface-container md:border md:border-outline-variant/40;
+  }
+
+  .dark .profile-menu-btn {
+    @apply md:bg-slate-900 md:hover:bg-slate-800 md:border-slate-700;
+  }
+
+  /* --- Formulaires & boutons — "forme" reprise du site de référence (help-jarvis) --- */
+  .app-form-container {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .app-label {
+    display: block;
+    font-size: 12px;
+    color: #919aa3; /* muted */
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 6px;
+  }
+
+  /* Forme d'input de référence, adaptée au thème clair de Magnum */
+  .app-input {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    color: #0b1c30;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    padding: 9px 12px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .app-input:focus {
+    border-color: #3d8ef5; /* blue */
+  }
+
+  .dark .app-input {
+    background: #1e293b;
+    border-color: #475569;
+    color: #e2e8f0;
+  }
+  .dark .app-input:focus {
+    border-color: #60a5fa;
+  }
+
+  .error-msg-box {
+    background-color: #fee2e2;
+    border: 1px solid #fca5a5;
+    color: #b91c1c;
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+  }
+
+  .dark .error-msg-box {
+    background-color: #7f1d1d;
+    border-color: #b91c1c;
+    color: #fca5a5;
+  }
+
+  /* Boutons pleine largeur, comme sur le site de référence */
+  button[type="submit"],
+  button.primary,
+  .primary-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #0042d7;
+    color: #ffffff;
+    border-radius: 0.375rem;
+    padding: 0.625rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  button.secondary,
+  .secondary-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #04183a;
+    color: #ffffff;
+    border-radius: 0.375rem;
+    padding: 0.625rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}

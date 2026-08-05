@@ -1,0 +1,9 @@
+{
+  "loginForm": {
+    "emailLabel": "Email",
+    "passwordLabel": "Mot de passe",
+    "rememberMe": "Se souvenir de moi",
+    "forgotPassword": "Mot de passe oublié ?",
+    "submit": "Connexion"
+  }
+}

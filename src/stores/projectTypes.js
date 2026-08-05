@@ -19,5 +19,18 @@ export const useProjectTypesStore = defineStore('projectTypes', () => {
     }
   }
 
-  return { projectTypes, loading, fetchAll }
+  // POST /api/project-types — crée un type pour l'utilisateur courant et l'ajoute à la liste.
+  async function create(name) {
+    try {
+      const response = await api.post('project-types', { name })
+      const newType = response.data.data
+      projectTypes.value.push(newType)
+      return newType
+    } catch (error) {
+      console.error('Error creating project type:', error)
+      throw error
+    }
+  }
+
+  return { projectTypes, loading, fetchAll, create }
 })

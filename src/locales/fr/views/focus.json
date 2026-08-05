@@ -1,0 +1,33 @@
+{
+  "focusView": {
+    "title": "Mode focus",
+    "subtitle": "Choisissez une durée, l'alarme sonnera à la fin.",
+    "durationTitle": "Durée de la session",
+    "minutesShort": "min",
+    "customLabel": "Autre durée (minutes)",
+    "useCustom": "Utiliser",
+    "customInvalid": "Choisissez une durée entre {min} et {max} minutes.",
+    "start": "Démarrer {minutes} minutes",
+    "started": "Focus lancé pour {minutes} minutes",
+    "webNotice": "Dans le navigateur, l'alarme sonne depuis cet onglet : gardez-le ouvert (il peut rester en arrière-plan). Pour une alarme même téléphone éteint, il faut l'app Android.",
+    "endsAt": "fin à {time}",
+    "paused": "en pause",
+    "pause": "Mettre en pause",
+    "resume": "Reprendre",
+    "stop": "Arrêter",
+    "stopped": "Session de focus arrêtée",
+    "confirmStopTitle": "Arrêter la session ?",
+    "confirmStopBody": "Le chronomètre sera remis à zéro et l'alarme annulée.",
+    "confirmStopCancel": "Continuer le focus",
+    "confirmStopConfirm": "Arrêter",
+    "elapsedTitle": "Pause !",
+    "elapsedHint": "Levez-vous et bougez quelques minutes.",
+    "breakDone": "C'est fait",
+    "breakDoneToast": "Pause validée, bien joué",
+    "breakSnooze": "Reporter de {minutes} min",
+    "breakSnoozedToast": "Pause reportée de {minutes} minutes",
+    "snoozedCount": "reportée {count} fois | reportée {count} fois",
+    "webPermissionDenied": "Les notifications sont bloquées pour ce site — le son fonctionnera quand même, mais sans notification visuelle. Autorisez-les dans les réglages du navigateur.",
+    "muteAlarm": "Couper le son"
+  }
+}

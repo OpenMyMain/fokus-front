@@ -5,6 +5,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -38,4 +39,30 @@
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+      Notifications locales (T-25 / T-13b). POST_NOTIFICATIONS, WAKE_LOCK et
+      RECEIVE_BOOT_COMPLETED sont déjà fournis par le manifest du plugin et fusionnés ici :
+      ne pas les redéclarer. Les trois ci-dessous, en revanche, sont à la charge de l'app.
+
+      Sans SCHEDULE_EXACT_ALARM, LocalNotificationManager.setExactIfPossible() retombe sur
+      setAndAllowWhileIdle() : l'alarme peut alors dériver de plusieurs minutes, ce qui est
+      rédhibitoire pour une fin de temps de focus.
+    -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <!--
+      Android 13+ : réservée aux apps dont l'alarme *est* la fonction (réveil, minuteur).
+      Contrairement à SCHEDULE_EXACT_ALARM elle est accordée d'office, sans passage par les
+      réglages système. C'est bien le cas de Fokus, dont l'alarme de pause est la raison d'être.
+      ⚠️ Google Play exige une justification lors de la publication.
+    -->
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!--
+      Prévu pour la suite de T-13b : afficher la pause en plein écran par-dessus l'écran
+      verrouillé. Le plugin Capacitor ne pose aucun fullScreenIntent — la permission ne sert
+      donc à rien tant que le bout de code natif n'est pas écrit, mais la déclarer maintenant
+      évite un second passage sur le manifest.
+    -->
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
 </manifest>

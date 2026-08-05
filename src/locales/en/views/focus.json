@@ -1,0 +1,33 @@
+{
+  "focusView": {
+    "title": "Focus mode",
+    "subtitle": "Pick a duration, the alarm will ring when it's over.",
+    "durationTitle": "Session length",
+    "minutesShort": "min",
+    "customLabel": "Custom length (minutes)",
+    "useCustom": "Use",
+    "customInvalid": "Pick a length between {min} and {max} minutes.",
+    "start": "Start {minutes} minutes",
+    "started": "Focus started for {minutes} minutes",
+    "webNotice": "In the browser, the alarm rings from this tab: keep it open (it may stay in the background). For an alarm that works with the screen off, use the Android app.",
+    "endsAt": "ends at {time}",
+    "paused": "paused",
+    "pause": "Pause",
+    "resume": "Resume",
+    "stop": "Stop",
+    "stopped": "Focus session stopped",
+    "confirmStopTitle": "Stop the session?",
+    "confirmStopBody": "The timer will be reset and the alarm cancelled.",
+    "confirmStopCancel": "Keep focusing",
+    "confirmStopConfirm": "Stop",
+    "elapsedTitle": "Break time!",
+    "elapsedHint": "Stand up and move for a few minutes.",
+    "breakDone": "Done",
+    "breakDoneToast": "Break logged, well done",
+    "breakSnooze": "Snooze {minutes} min",
+    "breakSnoozedToast": "Break snoozed for {minutes} minutes",
+    "snoozedCount": "snoozed {count} time | snoozed {count} times",
+    "webPermissionDenied": "Notifications are blocked for this site — the sound will still play, but without a visual notification. Allow them in your browser settings.",
+    "muteAlarm": "Mute"
+  }
+}

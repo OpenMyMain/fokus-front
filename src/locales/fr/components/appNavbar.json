@@ -1,0 +1,13 @@
+{
+  "appNavbar": {
+    "label": "Navigation principale",
+    "today": "Aujourd'hui",
+    "habits": "Habitudes",
+    "focus": "Focus",
+    "planning": "Planning",
+    "projects": "Projets",
+    "focusStartAria": "Démarrer une session de focus",
+    "focusRunningAria": "Session de focus en cours, {time} restantes",
+    "focusElapsedAria": "C'est l'heure de la pause"
+  }
+}
